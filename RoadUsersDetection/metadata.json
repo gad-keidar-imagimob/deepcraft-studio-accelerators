@@ -1,7 +1,7 @@
 {
   "title": "Road Users Detection",
-  "description": "Project to build a model that detects road users in an image.",
-  "algorithm": "Classification",
+  "description": "Project to build a model that detects people, trains, cars, busses, bicycles, motorbikes in an image.",
+  "algorithm": "Object Detection",
   "sensors": [
     "Camera"
   ],

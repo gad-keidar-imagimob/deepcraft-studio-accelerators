@@ -1,15 +1,18 @@
-﻿# Road Users Object Detection Project
+# Road Users Object Detection Project
 
-## Overview
+## Overview - Data & Use-Case
 
-This is an object detection project specifically tailored to identifying road users, leveraging the robust capabilities of the YOLO (You Only Look Once) algorithm. The model has been trained on a customized subset of the PASCAL VOC dataset, curated to emphasize road users. By fine-tuning YOLO on this specialized dataset, the project aims to achieve precise predictions of road users, which is critical for 
-applications in autonomous driving and advanced driver-assistance systems. \
- \
-The training process involved preprocessing the dataset to maintain diversity and balance, ensuring good enough detection across various scenarios. The model is of a compact size and optimized architecture, making it highly suitable for deployment on resource-constrained edge devices while maintaining good performance and accuracy. 
+This is an object detection project specifically tailored to identifying road users, leveraging the robust capabilities of the YOLO (You Only Look Once) algorithm. The model has been trained on a customized subset of the [PASCAL VOC 2012](https://docs.ultralytics.com/datasets/detect/voc/) dataset. 
+
+The PASCAL VOC (Visual Object Classes) dataset is widely used, open-source visual object recognition benchmark that contains high quality annotated images spanning multiple object categories. It has been extensively adopted in computer vision research for tasks such as object detection, classification, and segmentation. 
+
+In this work, a customized subset of PASCAL VOC 2012 version was curated to focus specifically on classes representing road users, namely **person, bicycle, bus, train, car, and motorbike**. This targeted selection was intended to optimize the model’s performance in traffic related scenarios by prioritizing categories most relevant to autonomous driving and advanced driver-assistance systems. 
+
+The model is of a compact size and optimized architecture, making it highly suitable for deployment on resource-constrained edge devices while maintaining good performance and accuracy.
 
 ## Contents
 
-`Data` 	- Contains the road users dataset derived from PASCAL VOC object detection dataset. With 5074 RGB images covering the following categories: person, bicycle, bus, train, car and motorbike.   
+`Data` 	- Contains the road users dataset derived from [PASCAL VOC 2012](https://docs.ultralytics.com/datasets/detect/voc/) object detection dataset, also available on [Kaggle](https://www.kaggle.com/datasets/gopalbhattrai/pascal-voc-2012-dataset). With 5074 RGB images covering the following categories: person, bicycle, bus, train, car and motorbike.   
 
 `Models` - Contains the trained and quantized model in .tflite file, ready for deployement, together with its predictions.
 
@@ -36,10 +39,3 @@ The recommended path to production for this road users detection project include
 - Experiment with different data augmentation settings to increase dataset variability, such as enabling more frequent 'flip left-right' or 'flip up-down' transformations to generate mirrored images of road users.
 - Optimize advanced settings, such as the optimizer, Intersection over Union (IoU) threshold, or confidence threshold, to fine-tune the model's sensitivity and performance for specific use cases.
 
-## Getting Started
-
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
-
-## Help & Support
-
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
