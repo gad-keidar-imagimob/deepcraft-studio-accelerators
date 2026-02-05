@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ImagimobStudio version="1.1.0">
-  <Job id="7c1d400f-2a20-11ef-822e-5d847a71129f" />
+  <Job id="09de1303-021a-11f1-abd2-8d649d51c92e" />
+  <ProjectType>Classification</ProjectType>
+  <ProjectId>66aa0e91-c992-4d29-b53c-bfd066b8d1b9</ProjectId>
   <Preprocessor inshape="[3]" intype="Float32" infreq="50" outshape="[25,3]" outtype="Float32">
     <Unit id="Core.Queues.SlidingWindow">
       <Argument param="input" type="String">data</Argument>
@@ -19,8 +21,7 @@
     <Patience>20</Patience>
     <AppendModels>False</AppendModels>
     <LossFunction>CategoricalCrossentropy</LossFunction>
-    <FactoryOptions>None</FactoryOptions>
-    <HardwareType>Default</HardwareType>
+    <HardwareType>Generic</HardwareType>
     <TrainingEnvironment>
     </TrainingEnvironment>
     <ModelFamily>Conv1D</ModelFamily>
@@ -32,6 +33,7 @@
     <LearnRate>Mid</LearnRate>
     <RegularizationFactor>High</RegularizationFactor>
     <LastNetworkInputShape>[25,3]</LastNetworkInputShape>
+    <LastClassCount>2</LastClassCount>
     <Optimizer>
       <LearningRate>0.001</LearningRate>
       <WeightDecay>0.0001</WeightDecay>
@@ -42,7 +44,7 @@
     </BuildSteps>
   </ModelFactory>
   <Models>
-    <Model name="conv1d-medium-speed-0" id="8c09f094-4062-4818-a063-fcd214c5f28e">
+    <Model name="conv1d-medium-speed-0" id="cde6ff3f-fa97-40f9-88c3-b88733fe4adf">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>128</BatchSize>
@@ -148,8 +150,9 @@
       </BuildSteps>
       <SymbolWeights override="False">
         <SymbolWeight symbol="anomaly" weight="1" />
+        <SymbolWeight symbol="(unlabeled)" weight="1" />
       </SymbolWeights>
-      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="0" outshape="[25,3]" outtype="Float32">
+      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="50" outshape="[25,3]" outtype="Float32">
         <Unit id="Core.Queues.SlidingWindow">
           <Argument param="input" type="String">data</Argument>
           <Argument param="time_input" type="String">time</Argument>
@@ -160,9 +163,9 @@
           <Argument param="time_output" type="String">time</Argument>
         </Unit>
       </Preprocessor>
-      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32" />
+      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="1" outshape="[128,3]" outtype="Float32" />
     </Model>
-    <Model name="conv1d-medium-speed-1" id="55df43f8-3906-4dd8-862a-bd75e730b950">
+    <Model name="conv1d-medium-speed-1" id="5b14d702-931c-411b-8303-6d2b0f912fe0">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>128</BatchSize>
@@ -268,8 +271,9 @@
       </BuildSteps>
       <SymbolWeights override="False">
         <SymbolWeight symbol="anomaly" weight="1" />
+        <SymbolWeight symbol="(unlabeled)" weight="1" />
       </SymbolWeights>
-      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="0" outshape="[25,3]" outtype="Float32">
+      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="50" outshape="[25,3]" outtype="Float32">
         <Unit id="Core.Queues.SlidingWindow">
           <Argument param="input" type="String">data</Argument>
           <Argument param="time_input" type="String">time</Argument>
@@ -280,9 +284,9 @@
           <Argument param="time_output" type="String">time</Argument>
         </Unit>
       </Preprocessor>
-      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32" />
+      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="1" outshape="[128,3]" outtype="Float32" />
     </Model>
-    <Model name="conv1d-medium-speed-2" id="1988c150-838e-4da3-8ae6-efe11d61abc6">
+    <Model name="conv1d-medium-speed-2" id="ee56721b-0411-4a8a-9e25-93a2ec637aaf">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>128</BatchSize>
@@ -388,8 +392,9 @@
       </BuildSteps>
       <SymbolWeights override="False">
         <SymbolWeight symbol="anomaly" weight="1" />
+        <SymbolWeight symbol="(unlabeled)" weight="1" />
       </SymbolWeights>
-      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="0" outshape="[25,3]" outtype="Float32">
+      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="50" outshape="[25,3]" outtype="Float32">
         <Unit id="Core.Queues.SlidingWindow">
           <Argument param="input" type="String">data</Argument>
           <Argument param="time_input" type="String">time</Argument>
@@ -400,9 +405,9 @@
           <Argument param="time_output" type="String">time</Argument>
         </Unit>
       </Preprocessor>
-      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32" />
+      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="1" outshape="[128,3]" outtype="Float32" />
     </Model>
-    <Model name="conv1d-medium-speed-3" id="7f8e1186-1840-4743-912f-57de20740908">
+    <Model name="conv1d-medium-speed-3" id="cf9a3b90-c8ed-4885-98c6-4d2c83ef8628">
       <LossFunction>CategoricalCrossentropy</LossFunction>
       <Epochs>100</Epochs>
       <BatchSize>128</BatchSize>
@@ -508,8 +513,9 @@
       </BuildSteps>
       <SymbolWeights override="False">
         <SymbolWeight symbol="anomaly" weight="1" />
+        <SymbolWeight symbol="(unlabeled)" weight="1" />
       </SymbolWeights>
-      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="0" outshape="[25,3]" outtype="Float32">
+      <Preprocessor override="False" inshape="[3]" intype="Float32" infreq="50" outshape="[25,3]" outtype="Float32">
         <Unit id="Core.Queues.SlidingWindow">
           <Argument param="input" type="String">data</Argument>
           <Argument param="time_input" type="String">time</Argument>
@@ -520,11 +526,12 @@
           <Argument param="time_output" type="String">time</Argument>
         </Unit>
       </Preprocessor>
-      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="0" outshape="[10]" outtype="Float32" />
+      <Postprocessor override="False" inshape="[128,3]" intype="Float32" infreq="1" outshape="[128,3]" outtype="Float32" />
     </Model>
   </Models>
   <Database balance="AnnotatedLength" redistributionScope="Everything">
     <SymbolMap>
+      <Symbol name="(unlabeled)" id="0" weight="1" />
       <Symbol name="anomaly" id="1" weight="1" />
     </SymbolMap>
     <DataSet id="unassigned" targetSize="0" labels="Unassigned" />
